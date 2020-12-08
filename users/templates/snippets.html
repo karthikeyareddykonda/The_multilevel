@@ -1,0 +1,40 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+    
+    <link href="/static/django_ace/widget.css" type="text/css" media="screen" rel="stylesheet">
+    <script src="/static/django_ace/ace/ace.js"></script>
+    <script src="/static/django_ace/widget.js"></script>
+    <script src="/static/django_ace/ace/mode-javascript.js"></script>
+    <script src="/static/django_ace/ace/mode-c_cpp.js"></script>
+    <script src="/static/django_ace/ace/mode-python.js"></script>
+    <script src="/static/django_ace/ace/mode-java.js"></script>
+    <script src="/static/django_ace/ace/theme-monokai.js"></script>
+        
+    <form action="" method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="Jb4p2MSLXHLrSl2HetM7t6OA0hs5tpFTdtbwuwCqEB8jslSXjirM56NTORdnDyVZ">
+
+        <label for="id_text"><h3>Write Your Code Here:</h3></label> <div class="django-ace-editor"><div style="width: 500px" class="django-ace-toolbar"><a href="./"      class="django-ace-max_min"></a></div><div class="django-ace-widget loading" data-behaviours="true" data-mode={{lang}} data-readonly="false"        data-showgutter="true" data-showinvisibles="false" data-showprintmargin="true" data-theme="monokai" data-usesofttabs="true" style="width:1200px;        height:400px"><div></div></div><textarea name="text" cols="40" rows="10" required id="id_text">{{initial_val}}</textarea></div>
+
+
+        <input type="submit"  name ="pressed" value="Save" />
+        <input type="submit" name="pressed" value="Compile and run" />
+        
+        <br><br>
+        <h3>Type Your input here</h3>
+        <div class="django-ace-editor"><div style="width: 500px" class="django-ace-toolbar"><a href="./"      class="django-ace-max_min"></a></div><div class="django-ace-widget loading" data-behaviours="true" data-mode=text data-readonly="false"        data-showgutter="true" data-showinvisibles="false" data-showprintmargin="true" data-theme="monokai" data-usesofttabs="true" style="width:1200px;        height:100px"><div></div></div><textarea name="input" id="inp" cols="40" rows="10">{{ inp_Data }}</textarea></div>
+
+
+        <br><br>
+        <h3>Your Output is</h3>
+        <div class="django-ace-editor"><div style="width: 500px" class="django-ace-toolbar"><a href="./"      class="django-ace-max_min"></a></div><div class="django-ace-widget loading" data-behaviours="true" data-mode=text data-readonly="true"        data-showgutter="true" data-showinvisibles="false" data-showprintmargin="true" data-theme="monokai" data-usesofttabs="true" style="width:1200px;        height:100px"><div></div></div><textarea name="output" cols="40" rows="10">{{ output }}</textarea></div>
+
+
+    </form>
+
+            </div>
+        </div>
+    </main>
+{% endblock content %}

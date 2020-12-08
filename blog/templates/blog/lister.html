@@ -1,0 +1,13 @@
+{% for item in contents %}
+    <li>
+    
+        {% if item.stat == 'dir' %}
+           <a href="folderview/{{item.path}}">{{item.name}}</a>
+            <ul>
+                {% include "blog/lister.html" with contents=item.child %}
+            </ul>
+        {% else %}
+             <a href="{{item.path}}">{{ item.name }}</a>
+        {% endif %}
+    </li>
+{% endfor %}

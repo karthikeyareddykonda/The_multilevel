@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <input type="text" name="filename" >
+    <input type="submit" value="Create">
+    
+</form>
+
+
+
+{% endblock content %}
